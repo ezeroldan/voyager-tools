@@ -1,0 +1,65 @@
+@import "bootstrap";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-vue/src/index.scss";
+
+*::selection {
+    background: $warning;
+    color: #ffffff;
+}
+html *::-moz-selection {
+    background: $warning;
+    color: #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #bdc3c7;
+}
+::-webkit-scrollbar-thumb {
+    background: #656d78;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: $warning;
+}
+
+body {
+    min-height: 100vh;
+
+    > #app {
+        min-height: 100vh;
+    }
+
+    /* Preloader */
+    [v-cloak] {
+        &::before {
+            content: "\F04E6";
+            display: block;
+            font-size: 140px;
+            font-family: "Material Design Icons";
+            color: #aab2bd;
+            height: 140px;
+            width: 140px;
+            line-height: 140px;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -70px 0px 0px -70px;
+            animation: cloak-spin infinite 1s linear;
+        }
+        > * {
+            display: none;
+        }
+    }
+}
+
+@keyframes cloak-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

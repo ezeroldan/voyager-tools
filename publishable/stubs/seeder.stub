@@ -1,0 +1,37 @@
+<?php
+
+use EzeRoldan\VoyagerTools\Seeder\Bread\BreadSeeder;
+
+class {{ class }} extends BreadSeeder
+{
+
+    protected function bread(): void
+    {
+        //$this->selectMenuItemParent('');
+
+        $this->setModel(Model::class);
+
+        $this->setIcon('mdi mdi-');
+
+        $this->setNamePlural('');
+        $this->setNameSingular('');
+
+        $this->setMenuItemOrden(1);
+    }
+
+    protected function fields(): void
+    {
+        $this->addFieldId();
+
+        $this->addFieldNombre(6);
+
+
+        $this->addFieldTimestamps();
+    }
+
+    protected function data(): void
+    {
+        //$this->setDataPartials([]);
+        //$this->insertManyByFields([], []);
+    }
+}
