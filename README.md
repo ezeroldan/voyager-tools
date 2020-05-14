@@ -16,12 +16,14 @@ composer require ezeroldan/voyager-tools
 
 ```BASH
 php artisan voyager:install
-php artisan voyager-tools:install
+php artisan voyager-tools:install --force
 ```
 
 ```BASH
-npm install vue bootstrap-vue bootstrap
+npm i
+npm run dev
 ```
+
 
 ## Local Development
 

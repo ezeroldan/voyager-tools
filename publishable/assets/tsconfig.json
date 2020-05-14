@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "ES2017",
+        "module": "commonjs",
+        "outDir": "./public/js",
+        "declaration": false,
+        "alwaysStrict": true,
+        "removeComments": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": [
+        "resources/js/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "files": ["resources/js/ts-shim.d.ts"]
+}

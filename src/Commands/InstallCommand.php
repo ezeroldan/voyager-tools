@@ -9,10 +9,10 @@ use EzeRoldan\VoyagerTools\VoyagerToolsServiceProvider;
 
 class InstallCommand extends Command
 {
-    protected $name = 'voyager-tools:install';
-    protected $description = 'Instala mis ajustes al Voyager package';
-
     protected $composer;
+
+    protected $signature   = 'voyager-tools:install {--force : Force the operation to run}';
+    protected $description = 'Instala mis ajustes al Voyager package';
 
     public function __construct(Composer $composer)
     {
@@ -22,14 +22,21 @@ class InstallCommand extends Command
 
     public function handle()
     {
-        File::deleteDirectory(database_path('/seeds'));
-        File::makeDirectory(database_path('/seeds'));
+        if ($this->option('force')) {
+            File::cleanDirectory(resource_path('/js'));
+            File::cleanDirectory(resource_path('/sass'));
+            File::cleanDirectory(resource_path('/views'));
+            File::cleanDirectory(database_path('/seeds'));
+        }
 
-        $tags =  ['seeds', 'config', 'assets', 'lang', 'routes', 'public', 'views'];
-        $this->call('vendor:publish', ['--provider' => VoyagerToolsServiceProvider::class, '--tag' => $tags, '--force' => true]);
+        $this->info('vendor:publish');
+        $tags = ['seeds', 'config', 'assets', 'lang', 'routes', 'public', 'stubs', 'views'];
+        $this->call('vendor:publish', ['--provider' => VoyagerToolsServiceProvider::class, '--tag' => $tags, '--force' => $this->option('force')]);
 
-        $this->composer->dumpAutoloads();
+        $this->info('composer dump-autoload');
+        $this->composer->setWorkingPath(base_path())->dumpAutoloads();
 
+        $this->info('migrate:fresh');
         $this->call('migrate:fresh', ['--seed' => true]);
     }
 }

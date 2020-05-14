@@ -16,33 +16,27 @@ class VoyagerToolsServiceProvider extends ServiceProvider
             $this->commands([InstallCommand::class]);
 
             /** Publishes  */
+            $pubPath = dirname(__DIR__) . '/publishable';
             $publishable = [
                 'assets' => [
-                    'assets/js/'   => resource_path('js'),
-                    'assets/sass/' => resource_path('sass'),
-                    'assets/storage/users/' => storage_path('app/public/users'),
-                    'assets/storage/settings/' => storage_path('app/public/settings'),
-                    'assets/webpack.mix.js' => base_path('webpack.mix.js'),
+                    "{$pubPath}/assets/js/"                  => resource_path('js'),
+                    "{$pubPath}/assets/sass/"                => resource_path('sass'),
+                    "{$pubPath}/assets/storage/users/"       => storage_path('app/public/users'),
+                    "{$pubPath}/assets/storage/settings/"    => storage_path('app/public/settings'),
+                    "{$pubPath}/assets/webpack.mix.js"       => base_path('webpack.mix.js'),
+                    "{$pubPath}/assets/package.json"         => base_path('package.json'),
+                    "{$pubPath}/assets/tsconfig.json"        => base_path('tsconfig.json'),
                 ],
-                'config' => ['config/' => config_path('/')],
-                'lang'   => ['lang/'              => resource_path('lang')],
-                'routes' => ['routes/web.php'     => base_path('routes/web.php')],
-                'public' => ['public/'            => public_path()],
-                'seeds'  => ['database/seeds/'    => database_path('seeds')],
-                'stubs'  => ['stubs/'             => base_path('stubs')],
-                'views'  => ['views/'             => resource_path('views')],
+                'config' => ["{$pubPath}/config/"            => config_path('/')],
+                'lang'   => ["{$pubPath}/lang/"              => resource_path('lang')],
+                'routes' => ["{$pubPath}/routes/web.php"     => base_path('routes/web.php')],
+                'public' => ["{$pubPath}/public/"            => public_path()],
+                'seeds'  => ["{$pubPath}/database/seeds/"    => database_path('seeds')],
+                'stubs'  => ["{$pubPath}/stubs/"             => base_path('stubs')],
+                'views'  => ["{$pubPath}/views/"             => resource_path('views')],
             ];
 
-            $pubPath = dirname(__DIR__) . '/publishable';
-
             foreach ($publishable as $group => $paths) {
-
-                array_walk($paths, function (&$path) use ($pubPath) {
-                    $path = "{$pubPath}/{$path}";
-                });
-
-                dd($paths);
-
                 $this->publishes($paths, $group);
             }
         }
