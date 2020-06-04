@@ -12,7 +12,7 @@ trait Bread
     protected function getBread(): BreadModel
     {
         if (is_null($this->bread)) {
-            $this->bread = new Bread();
+            $this->bread = new BreadModel();
             $this->bread->setServerSide(false);
             //$this->bread->setPolicy('TCG\\Voyager\\Policies\\BasePolicy')
             $this->bread->setGeneratePermissions();

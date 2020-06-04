@@ -4,8 +4,8 @@ namespace EzeRoldan\VoyagerTools\Seeder\Bread;
 
 use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\Permission;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use EzeRoldan\VoyagerTools\Seeder\Bread\Field\Field;
-use EzeRoldan\VoyagerTools\Seeder\Bread\Field\Relationship\HasMany;
 
 /**
  * @property int id

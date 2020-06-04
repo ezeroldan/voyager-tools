@@ -22,6 +22,12 @@ class InstallCommand extends Command
 
     public function handle()
     {
+
+        $this->call('vendor:publish', ['--provider' => VoyagerToolsServiceProvider::class, '--tag' => ['config'], '--force' => $this->option('force')]);
+
+        $this->call('migrate:fresh');
+        $this->call('voyager:install');
+
         if ($this->option('force')) {
             File::cleanDirectory(resource_path('/js'));
             File::cleanDirectory(resource_path('/sass'));
@@ -30,7 +36,7 @@ class InstallCommand extends Command
         }
 
         $this->info('vendor:publish');
-        $tags = ['seeds', 'config', 'assets', 'lang', 'routes', 'public', 'stubs', 'views'];
+        $tags = ['database', 'config', 'assets', 'lang', 'routes', 'public', 'stubs', 'views'];
         $this->call('vendor:publish', ['--provider' => VoyagerToolsServiceProvider::class, '--tag' => $tags, '--force' => $this->option('force')]);
 
         $this->info('composer dump-autoload');

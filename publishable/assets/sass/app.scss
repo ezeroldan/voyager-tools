@@ -35,7 +35,7 @@ body {
     /* Preloader */
     [v-cloak] {
         &::before {
-            content: "\F04E6";
+            content: "\F006A";
             display: block;
             font-size: 140px;
             font-family: "Material Design Icons";
@@ -48,7 +48,7 @@ body {
             left: 50%;
             top: 50%;
             margin: -70px 0px 0px -70px;
-            animation: cloak-spin infinite 1s linear;
+            animation: spin 1s linear infinite;
         }
         > * {
             display: none;
@@ -56,7 +56,8 @@ body {
     }
 }
 
-@keyframes cloak-spin {
+
+@keyframes spin {
     from {
         transform: rotate(0deg);
     }
@@ -64,3 +65,4 @@ body {
         transform: rotate(360deg);
     }
 }
+

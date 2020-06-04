@@ -63,7 +63,7 @@ return [
         'default_role'   => 'admin',
     ],
 
-    'primary_color' => env('ADMIN_PRIMARY_COLOR', '#22A7F0'),
+    'primary_color' => env('ADMIN_PRIMARY_COLOR', '#242a33'),
 
     'show_dev_tips' => true,
 

@@ -1,6 +1,5 @@
 # [TCG Voyager](https://github.com/the-control-group/voyager) Tools para mis proyectos
 
-
 Este es un paquete de Tools para facilitar el uso del panel admin [TCG Voyager](https://github.com/the-control-group/voyager).
 
 ## Instalacion
@@ -10,20 +9,13 @@ cd app
 ```
 
 ```BASH
-composer require tcg/voyager
 composer require ezeroldan/voyager-tools
-```
-
-```BASH
-php artisan voyager:install
 php artisan voyager-tools:install --force
 ```
 
 ```BASH
-npm i
-npm run dev
+npm i && npm run dev
 ```
-
 
 ## Local Development
 
@@ -44,3 +36,4 @@ npm run dev
     "ezeroldan/voyager-tools": "*"
 }
 ```
+
