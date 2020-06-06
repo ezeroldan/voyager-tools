@@ -31,7 +31,7 @@ class VoyagerToolsServiceProvider extends ServiceProvider
                 ],
                 'database' => [
                     "{$pubPath}/database/seeds/"                => database_path('seeds'),
-                    "{$pubPath}/database/migrations/"           => database_path('migrations')
+                    //"{$pubPath}/database/migrations/"           => database_path('migrations')
                 ],
                 'config'      => ["{$pubPath}/config/"          => config_path('/')],
                 'lang'        => ["{$pubPath}/lang/"            => resource_path('lang')],

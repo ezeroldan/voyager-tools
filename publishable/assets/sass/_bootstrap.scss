@@ -1,26 +1,10 @@
-/* Colors */
-$red: #f53030;
-$blue: #3076f5;
-$cyan: #30bff5;
-$pink: #f5305e;
-$teal: #30f5e3;
-$green: #30f572;
-$indigo: #305ef5;
-$purple: #4530f5;
-$yellow: #f5d430;
-$warning: #f56330;
-
-$light: #f5f7fa;
-$primary: $warning;
-$secondary: #ccd1d9;
-
-$link-color: $warning;
 
 /* Font */
 $font-size-sm: 0.8rem;
 $font-size-lg: 1.25rem;
 $font-size-base: 0.9rem;
-$font-family-sans-serif: "Montserrat", sans-serif;
+$font-family-sans-serif: "Open Sans", sans-serif;
+$font-family-monospace: "Inconsolata", monospace;
 
 /* Display headings */
 $display1-size: 4.5rem;
@@ -48,7 +32,6 @@ $dropdown-padding-y: 0px;
 $dropdown-border-width: 0px;
 
 /* Cards */
-$card-cap-bg: #ccd1d9;
 $card-border-width: 0px;
 $card-spacer-y: 0.75rem;
 $card-spacer-x: 0.75rem;
