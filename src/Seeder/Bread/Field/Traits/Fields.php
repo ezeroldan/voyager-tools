@@ -158,9 +158,9 @@ trait Fields
         return $this->addField(new Password($dbColName, $name,  $required, $width));
     }
 
-    protected function addFieldMap(string $dbColName, string $name = null, bool $required = true, int $width = null): Map
+    protected function addFieldMap(string $dbColName, string $name = null, bool $required = false, int $width = null): Map
     {
-        return $this->addField(new Map($dbColName, $name,  $required, $width));
+        return $this->addField(new Map($dbColName, $name,  $required, $width))->hideInPageBrowse()->hideInPageRead();
     }
 
     protected function addFieldCode(string $dbColName, string $name = null, bool $required = true, int $width = null): Code

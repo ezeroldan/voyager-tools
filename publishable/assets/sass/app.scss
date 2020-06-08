@@ -4,11 +4,11 @@
 @import "~bootstrap-vue/src/index.scss";
 
 *::selection {
-    background: $warning;
+    background: $primary;
     color: #ffffff;
 }
 html *::-moz-selection {
-    background: $warning;
+    background: $primary;
     color: #ffffff;
 }
 
@@ -22,7 +22,7 @@ html *::-moz-selection {
     background: #656d78;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: $warning;
+    background: $primary;
 }
 
 body {

@@ -1,16 +1,19 @@
 <?php
 
 use TCG\Voyager\Models\Menu;
-use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\MenuItem;
+use Illuminate\Database\Seeder;
 use EzeRoldan\VoyagerTools\Seeder\InsertSeeder;
 
-class MenuItemsTableSeeder extends Seeder
+class MenusTableSeeder extends Seeder
 {
     use InsertSeeder;
 
     public function run(): void
     {
+
+        Menu::firstOrCreate(['name' => 'admin',]);
+
         $this->setModelClass(MenuItem::class);
         $this->setDataPartials([
             'url'     => null,

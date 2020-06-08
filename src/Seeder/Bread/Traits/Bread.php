@@ -29,7 +29,7 @@ trait Bread
 
     protected function setOrderBy(string $col): self
     {
-        $this->getBread()->setOrderBy($col);
+        //$this->getBread()->setOrderBy($col);
 
         if (!$this->getBread()->isDefaultSearchCol()) {
             $this->getBread()->setDefaultSearchCol($col);

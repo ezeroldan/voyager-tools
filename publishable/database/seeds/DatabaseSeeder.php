@@ -6,7 +6,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->seddersVoyager();
+        $this->seddersAdmin();
         $this->seddersApp();
         $this->seddersDummy();
 
@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionRoleTableSeeder::class);
     }
 
-    protected function seddersVoyager(): void
+    protected function seddersAdmin(): void
     {
 
         /** Modulos */
@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
 
         /** Menu */
         $this->call(MenusTableSeeder::class);
-        $this->call(MenuItemsTableSeeder::class);
 
         /** Roles, Usuarios y Permisos */
         $this->call(RolesTableSeeder::class);
@@ -36,6 +35,7 @@ class DatabaseSeeder extends Seeder
 
     protected function seddersApp(): void
     {
+        $this->call(NavbarSeeder::class);
     }
 
     protected function seddersDummy(): void

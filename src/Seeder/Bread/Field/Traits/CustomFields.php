@@ -25,7 +25,7 @@ trait CustomFields
     {
 
         if (!$this->isOrderBy()) {
-            $this->setOrderBy('nombre');
+            //$this->setOrderBy('nombre');
         }
 
         if (!$this->isDefaultSearchCol()) {
@@ -33,7 +33,7 @@ trait CustomFields
         }
 
         if (!$this->isOrderDisplayCol()) {
-            $this->setOrderDisplayCol('nombre');
+            //$this->setOrderDisplayCol('nombre');
         }
 
         return $this->addFieldText('nombre', 'Nombre', $required, $width);
@@ -81,7 +81,7 @@ trait CustomFields
 
     protected function addFieldSeo(int $width = 6, int $rows = 4): void
     {
-        $this->addFieldSeoDescription($width, $rows);
-        $this->addFieldSeoKeywords($width, $rows);
+        $this->addFieldSeoDescription($width, $rows)->hideInPageBrowse();
+        $this->addFieldSeoKeywords($width, $rows)->hideInPageBrowse();
     }
 }
