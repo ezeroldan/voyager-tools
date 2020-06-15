@@ -68,14 +68,14 @@ trait Fields
         return $this->addField(new Text($dbColName, $name,  $required, $width, $origin, $forceUpdate));
     }
 
-    protected function addFieldTextarea(string $dbColName, string $name = null, bool $required = true, int $width = null, $rows): Textarea
+    protected function addFieldTextarea(string $dbColName, string $name = null, bool $required = true, int $width = null, $rows = 5): Textarea
     {
-        return $this->addField(new Textarea($dbColName, $name, $required, $width, $rows));
+        return $this->addField(new Textarea($dbColName, $name, $required, $width, $rows))->hideInPageBrowse();
     }
 
     protected function addFieldRichText(string $dbColName, string $name = null, bool $required = true, int $width = null): RichText
     {
-        return $this->addField(new RichText($dbColName, $name, $required, $width));
+        return $this->addField(new RichText($dbColName, $name, $required, $width))->hideInPageBrowse();
     }
 
     protected function addFieldMarkdown(string $dbColName, string $name = null, bool $required = true, int $width = null): Markdown
@@ -113,9 +113,9 @@ trait Fields
         return $this->addField(new File($dbColName, $name,  $required, $width));
     }
 
-    protected function addFieldImage(string $dbColName, string $name = null, bool $required = true, int $widthPx = null, int $heightPx = null, int $width = null): Image
+    protected function addFieldImage(string $dbColName, string $name = null, bool $required = true, int $width = null, int $widthPx = null, int $heightPx = null): Image
     {
-        return $this->addField(new Image($dbColName, $name,  $required, $widthPx, $heightPx, $width));
+        return $this->addField(new Image($dbColName, $name, $required, $width, $widthPx, $heightPx))->hideInPageBrowse();
     }
 
     protected function addFieldMediaPicker(string $dbColName, string $name = null, int $width = null): MediaPicker
@@ -125,7 +125,7 @@ trait Fields
 
     protected function addFieldImagesMultiple(string $dbColName, string $name = null, bool $required = true, int $width = null): ImagesMultiple
     {
-        return  $this->addField(new ImagesMultiple($dbColName, $name,  $required, $width));
+        return  $this->addField(new ImagesMultiple($dbColName, $name,  $required, $width))->hideInPageBrowse();
     }
 
     protected function addFieldTime(string $dbColName, string $name = null, bool $required = true, int $width = null): Time

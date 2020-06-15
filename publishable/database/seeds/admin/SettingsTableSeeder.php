@@ -16,7 +16,7 @@ class SettingsTableSeeder extends Seeder
         /** Site */
         $this->setDataPartial('group', 'Site');
         $this->insertManyByFields(['key', 'display_name', 'type', 'value', 'order'], [
-            ['site.title',          __('voyager::seeders.settings.site.title'),         'text', __('voyager::seeders.settings.site.title'), 1],
+            ['site.title',          __('voyager::seeders.settings.site.title'),         'text', config('app.name'), 1],
             ['site.description',    __('voyager::seeders.settings.site.description'),   'text', __('voyager::seeders.settings.site.description'), 2],
             ['site.logo',           __('voyager::seeders.settings.site.logo'),          'image', null, 3],
             ['site.google_analytics_tracking_id', __('voyager::seeders.settings.site.google_analytics_tracking_id'), 'text', null, 4],

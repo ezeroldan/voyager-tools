@@ -873,7 +873,7 @@ body {
               .panel.panel-bordered {
                 > form.form-edit-add {
                   .panel-body {
-                    padding: 20px 10px 10px;
+                    padding: 20px 10px 0px;
 
                     > .form-group[class*="col-"] {
                       padding-left: 10px;
@@ -1112,6 +1112,7 @@ body {
             &.settings {
               .panel {
                 .page-content.settings {
+                  border: 0;
                   margin: 0;
                   padding: 0;
 
@@ -1123,7 +1124,7 @@ body {
                   }
 
                   > .tab-content > .tab-pane {
-                    padding: 0;
+                    padding: 0 0 10px;
 
                     > .panel-heading {
                       margin: 0px 20px 0px 20px;

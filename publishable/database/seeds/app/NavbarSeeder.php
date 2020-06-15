@@ -19,16 +19,16 @@ class NavbarSeeder extends Seeder
         $menu = Menu::firstOrCreate(['name' => 'header']);
         $this->setDataPartial('menu_id', $menu->id);
 
-        $this->insertManyByFields(['title', 'route', 'order'], [
-            ['Home', 'home', 1],
+        $this->insertManyByFields(['order', 'title', 'route', 'parameters'], [
+            [1, 'Home', 'home', null],
         ]);
 
         /** Footer */
         $menu = Menu::firstOrCreate(['name' => 'footer']);
         $this->setDataPartial('menu_id', $menu->id);
 
-        $this->insertManyByFields(['title', 'route', 'order'], [
-            ['Privacidad y Uso del Sitio', '', 1]
+        $this->insertManyByFields(['order', 'title', 'route', 'parameters'], [
+            [1, 'Privacidad y Uso del Sitio', '', null]
         ]);
     }
 }

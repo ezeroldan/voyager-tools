@@ -34,9 +34,11 @@ class VoyagerToolsServiceProvider extends ServiceProvider
                     //"{$pubPath}/database/migrations/"           => database_path('migrations')
                 ],
                 'config'      => ["{$pubPath}/config/"          => config_path('/')],
+				'controllers' => ["{$pubPath}/controllers/"     => config_path('Http/Controllers')],
                 'lang'        => ["{$pubPath}/lang/"            => resource_path('lang')],
                 'routes'      => ["{$pubPath}/routes/web.php"   => base_path('routes/web.php')],
                 'public'      => ["{$pubPath}/public/"          => public_path()],
+				'providers'   => ["{$pubPath}/providers/"       => app_path('Providers')],
                 'stubs'       => ["{$pubPath}/stubs/"           => base_path('stubs')],
                 'views'       => ["{$pubPath}/views/"           => resource_path('views')],
             ];

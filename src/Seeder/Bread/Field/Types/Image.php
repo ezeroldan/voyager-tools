@@ -6,9 +6,9 @@ use EzeRoldan\VoyagerTools\Seeder\Bread\Field\Field;
 
 class Image extends Field
 {
-    public function __construct(string $dbColName, string $name = null,  int $widthPx = null, int $heightPx = null, int  $width = null)
+    public function __construct(string $dbColName, string $name = null, bool $required = false, int  $width = null,  int $widthPx = null, int $heightPx = null)
     {
-        parent::__construct('image', $dbColName, $name, false, $width);
+        parent::__construct('image', $dbColName, $name, $required, $width);
         $this->extras['resize']['width'] = $widthPx;
         $this->extras['resize']['height'] = $heightPx;
     }
