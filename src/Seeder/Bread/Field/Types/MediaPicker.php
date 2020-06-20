@@ -16,7 +16,7 @@ class MediaPicker extends Field
         parent::__construct('media_picker', $dbColName, $name, false, $width);
         $this->hideInPageBrowse();
         $this->setExtra('min', 0);
-        $this->setExtra('max', 0);
+        $this->setExtra('max', 20);
     }
 
     /**
@@ -157,46 +157,85 @@ class MediaPicker extends Field
     {
         return $this->addAllowed('image/bmp');
     }
+
+    /**
+     * The start path relative to the filesystem
+     * Can contain the following placeholders:
+     * 
+     * {pk} the primary-key of the entry (only for base_path)
+     * {uid} the user-id of the current logged-in user
+     * {date:format} the current date in the format defined in format. For example {date:d.m.Y}
+     * {random:10} random string with N characters
+     * 
+     * So a base_path can, for example, look like the following:
+     * /my-bread/{pk}/{date:Y}/{date:m}/
+     * 
+     * @param string $name
+     * @return self
+     */
+    public function setBasePath(string $path): self
+    {
+        $this->extras['base_path'] = $path;
+        return $this;
+    }
+
+    /**
+     * Rename uploaded files to a given string/expression
+     *
+     * @param string $name
+     * @return self
+     */
+    public function setRename(string $name): self
+    {
+        $this->extras['rename'] = $name;
+        return $this;
+    }
+
+    /**
+     * Shows stored data as images when browsing
+     *
+     * @param bool $value
+     * @return self
+     */
+    public function setShowAsImages(bool $value = true): self
+    {
+        $this->extras['show_as_images'] = $value;
+        return $this;
+    }
+
+    /**
+     * If the media-picker should be expanded by default
+     * 
+     * @param bool $value
+     * @return self
+     */
+    public function setExpanded(bool $value = true): self
+    {
+        $this->extras['expanded'] = $value;
+        return $this;
+    }
+
+    /**
+     * Hides known thumbnails and shows them as children of the parent image
+     *
+     * @param boolean $value
+     * @return self
+     */
+    public function setHideThumbnails(bool $value = true): self
+    {
+        $this->extras['hide_thumbnails'] = $value;
+        return $this;
+    }
+
+    /**
+     * Sets the quality of uploaded images and thumbnails
+     *
+     * @param integer $quality
+     * @return self
+     */
+    public function set(int $quality): self
+    {
+        $this->extras['quality'] = $quality;
+        return $this;
+    }
 }
-
-
-/*
-
-
-base_path
-The start path relative to the filesystem
-String
-/bread-slug/
-
-
-rename
-Rename uploaded files to a given string/expression
-String
-Original name
-
-
-show_as_images
-Shows stored data as images when browsing
-bool
-false
-
-
-expanded
-If the media-picker should be expanded by default
-bool
-true
-
-
-hide_thumbnails
-Hides known thumbnails and shows them as children of the parent image
-bool
-true
-
-
-quality
-Sets the quality of uploaded images and thumbnails
-int
-90
-
-
-*/
