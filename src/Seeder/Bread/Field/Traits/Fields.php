@@ -118,9 +118,9 @@ trait Fields
         return $this->addField(new Image($dbColName, $name, $required, $width, $widthPx, $heightPx))->hideInPageBrowse();
     }
 
-    protected function addFieldMediaPicker(string $dbColName, string $name = null, int $width = null): MediaPicker
+    protected function addFieldMediaPicker(string $dbColName, string $name = null, int $width = null, int $min = 0, int $max = 20): MediaPicker
     {
-        return $this->addField(new MediaPicker($dbColName, $name, $width));
+        return $this->addField(new MediaPicker($dbColName, $name, $width, $min, $max));
     }
 
     protected function addFieldImagesMultiple(string $dbColName, string $name = null, bool $required = true, int $width = null): ImagesMultiple
