@@ -28,6 +28,7 @@ class MediaPicker extends Field
         $this->setAllowDelete();
         $this->setAllowRename();
         $this->setAllowCreateFolder();
+        $this->setRename("{random:10}");
     }
 
     /**

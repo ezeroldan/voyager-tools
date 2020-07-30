@@ -1007,6 +1007,10 @@ body {
                                 .breadcrumb-container {
                                   .breadcrumb {
                                     border: 0;
+
+                                    li .arrow {
+                                      display: none;
+                                    }
                                   }
                                 }
                                 > .flex {
