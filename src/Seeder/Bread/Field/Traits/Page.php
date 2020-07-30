@@ -12,7 +12,7 @@ trait Page
      */
     public function showInPageBrowse(): self
     {
-        $this->browse =  true;
+        $this->browse = true;
         return $this;
     }
 
@@ -21,9 +21,9 @@ trait Page
      *
      * @return self
      */
-    public function  hideInPageBrowse(): self
+    public function hideInPageBrowse(): self
     {
-        $this->browse =  false;
+        $this->browse = false;
         return $this;
     }
 
@@ -34,7 +34,7 @@ trait Page
      */
     public function showInPageRead(): self
     {
-        $this->read =  true;
+        $this->read = true;
         return $this;
     }
 
@@ -45,7 +45,7 @@ trait Page
      */
     public function hideInPageRead(): self
     {
-        $this->read =  false;
+        $this->read = false;
         return $this;
     }
 
@@ -78,7 +78,7 @@ trait Page
      */
     public function showInPageAdd(): self
     {
-        $this->add =  true;
+        $this->add = true;
         return $this;
     }
 
@@ -89,7 +89,7 @@ trait Page
      */
     public function hideInPageAdd(): self
     {
-        $this->add =  false;
+        $this->add = false;
         return $this;
     }
 
@@ -100,7 +100,7 @@ trait Page
      */
     public function showInPageDelete(): self
     {
-        $this->delete =  true;
+        $this->delete = true;
         return $this;
     }
 
@@ -111,7 +111,7 @@ trait Page
      */
     public function hideInPageDelete(): self
     {
-        $this->delete =  false;
+        $this->delete = false;
         return $this;
     }
 }

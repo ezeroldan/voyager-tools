@@ -65,7 +65,7 @@ trait Fields
 
     protected function addFieldText(string $dbColName, string $name = null, bool $required = true, int $width = null, string $origin = null, bool $forceUpdate = null): Text
     {
-        return $this->addField(new Text($dbColName, $name,  $required, $width, $origin, $forceUpdate));
+        return $this->addField(new Text($dbColName, $name, $required, $width, $origin, $forceUpdate));
     }
 
     protected function addFieldTextarea(string $dbColName, string $name = null, bool $required = true, int $width = null, $rows = 5): Textarea
@@ -80,7 +80,7 @@ trait Fields
 
     protected function addFieldMarkdown(string $dbColName, string $name = null, bool $required = true, int $width = null): Markdown
     {
-        return $this->addField(new Markdown($dbColName, $name,  $required, $width));
+        return $this->addField(new Markdown($dbColName, $name, $required, $width));
     }
 
     protected function addFieldCheckbox(string $dbColName, string $name = null, string $on = 'SI', string $off = 'NO', bool $checked = true, int $width = 2): Checkbox
@@ -90,27 +90,27 @@ trait Fields
 
     protected function addFieldCheckboxMultiple(string $dbColName, string $name = null, bool $required = true, int $width = null): CheckboxMultiple
     {
-        return $this->addField(new CheckboxMultiple($dbColName, $name,  $required, $width));
+        return $this->addField(new CheckboxMultiple($dbColName, $name, $required, $width));
     }
 
     protected function addFieldRadioButtom(string $dbColName, string $name = null, bool $required = true, int $width = null): RadioButtom
     {
-        return $this->addField(new RadioButtom($dbColName, $name,  $required, $width));
+        return $this->addField(new RadioButtom($dbColName, $name, $required, $width));
     }
 
     protected function addFieldSelect(string $dbColName, string $name = null, bool $required = true, int $width = null): Select
     {
-        return $this->addField(new Select($dbColName, $name,  $required, $width));
+        return $this->addField(new Select($dbColName, $name, $required, $width));
     }
 
     protected function addFieldSelectMultiple(string $dbColName, string $name = null, bool $required = true, int $width = null): SelectMultiple
     {
-        return $this->addField(new SelectMultiple($dbColName, $name,  $required, $width));
+        return $this->addField(new SelectMultiple($dbColName, $name, $required, $width));
     }
 
     protected function addFieldFile(string $dbColName, string $name = null, bool $required = true, int $width = null): File
     {
-        return $this->addField(new File($dbColName, $name,  $required, $width));
+        return $this->addField(new File($dbColName, $name, $required, $width));
     }
 
     protected function addFieldImage(string $dbColName, string $name = null, bool $required = true, int $width = null, int $widthPx = null, int $heightPx = null): Image
@@ -125,27 +125,27 @@ trait Fields
 
     protected function addFieldImagesMultiple(string $dbColName, string $name = null, bool $required = true, int $width = null): ImagesMultiple
     {
-        return  $this->addField(new ImagesMultiple($dbColName, $name,  $required, $width))->hideInPageBrowse();
+        return $this->addField(new ImagesMultiple($dbColName, $name, $required, $width))->hideInPageBrowse();
     }
 
     protected function addFieldTime(string $dbColName, string $name = null, bool $required = true, int $width = null): Time
     {
-        return $this->addField(new Time($dbColName, $name,  $required, $width));
+        return $this->addField(new Time($dbColName, $name, $required, $width));
     }
 
     protected function addFieldDate(string $dbColName, string $name = null, bool $required = true, int $width = 2, string $format = '%d/%m/%Y'): Date
     {
-        return $this->addField(new Date($dbColName, $name,  $required, $width, $format));
+        return $this->addField(new Date($dbColName, $name, $required, $width, $format));
     }
 
     protected function addFieldTimestamp(string $dbColName, string $name = null, bool $required = true, int $width = null, string $format = '%d/%m/%Y %H:%i'): Timestamp
     {
-        return $this->addField(new Timestamp($dbColName, $name,  $required, $width, $format));
+        return $this->addField(new Timestamp($dbColName, $name, $required, $width, $format));
     }
 
-    protected function addFieldColor(string $dbColName = 'color', string $name =  'Color', bool $required = true, int $width = 2): Color
+    protected function addFieldColor(string $dbColName = 'color', string $name = 'Color', bool $required = true, int $width = 2): Color
     {
-        return $this->addField(new Color($dbColName, $name,  $required, $width));
+        return $this->addField(new Color($dbColName, $name, $required, $width));
     }
 
     protected function addFieldHidden(string $dbColName, string $name = null, bool $required = true): Hidden
@@ -155,16 +155,16 @@ trait Fields
 
     protected function addFieldPassword(string $dbColName, string $name = null, bool $required = true, int $width = null): Password
     {
-        return $this->addField(new Password($dbColName, $name,  $required, $width));
+        return $this->addField(new Password($dbColName, $name, $required, $width));
     }
 
     protected function addFieldMap(string $dbColName, string $name = null, bool $required = false, int $width = null): Map
     {
-        return $this->addField(new Map($dbColName, $name,  $required, $width))->hideInPageBrowse()->hideInPageRead();
+        return $this->addField(new Map($dbColName, $name, $required, $width))->hideInPageBrowse()->hideInPageRead();
     }
 
     protected function addFieldCode(string $dbColName, string $name = null, bool $required = true, int $width = null): Code
     {
-        return $this->addField(new Code($dbColName, $name,  $required, $width));
+        return $this->addField(new Code($dbColName, $name, $required, $width));
     }
 }

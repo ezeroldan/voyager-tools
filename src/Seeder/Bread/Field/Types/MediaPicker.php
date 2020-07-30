@@ -17,6 +17,17 @@ class MediaPicker extends Field
         $this->hideInPageBrowse();
         $this->setExtra('min', $min);
         $this->setExtra('max', $max);
+
+        /** Opciones Default */
+        $this->setExpanded();
+        $this->setAllowCrop();
+        $this->setAllowMove();
+        $this->setShowFolders();
+        $this->setShowToolbar();
+        $this->setAllowUpload();
+        $this->setAllowDelete();
+        $this->setAllowRename();
+        $this->setAllowCreateFolder();
     }
 
     /**

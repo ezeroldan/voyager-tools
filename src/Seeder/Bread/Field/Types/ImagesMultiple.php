@@ -40,7 +40,7 @@ class ImagesMultiple extends Field
         return $this;
     }
 
-    public function addThumbnail(int $width = null, $height = null, string $name = 'thumbnail')
+    public function addThumbnailCrop(int $width = null, $height = null, string $name = 'thumbnail')
     {
         $this->extras['thumbnails'][] = [
             'name' => $name,
