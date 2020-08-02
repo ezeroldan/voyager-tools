@@ -103,4 +103,15 @@ trait Bread
         $this->getBread()->setOrderDesc();
         return $this;
     }
+
+    /**
+     * Setear controller a medida
+     * 
+     * @return self
+     */
+    protected function setController(string $controller): self
+    {
+        $this->getBread()->controller = $controller;
+        return $this;
+    }
 }
