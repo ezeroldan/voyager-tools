@@ -141,15 +141,14 @@ class Field extends DataRow
     }
 
     /**
-     * Agregar Rules
+     * Setear validacion
      *
-     * @param string $rule
+     * @param array $param
      * @return self
      */
-    public function addValidationRule(string $rule): self
+    public function setValidation(array $param): self
     {
-        $this->extras['validation']['rule'][] = $rule;
-        return $this;
+        return $this->setExtra('validation', $param);
     }
 
     /**

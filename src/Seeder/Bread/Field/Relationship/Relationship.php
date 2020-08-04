@@ -35,14 +35,5 @@ abstract class Relationship extends Field
 
         $this->setExtra('column', $foreignKey);
         $this->setExtra('label', $label);
-
-        if ($required) {
-            $this->setExtra('validation', [
-                'rule' => 'required',
-                'messages' => [
-                    'required' => 'Es obligatorio cargar el campo :attribute.'
-                ]
-            ]);
-        }
     }
 }

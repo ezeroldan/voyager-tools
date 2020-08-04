@@ -14,25 +14,58 @@ trait Relationships
 
     protected function addRelationHasOne(string $model, string $foreignKey, string $name, int $width = null, bool $required = true, string $label = 'nombre'): HasOne
     {
-        $this->addFieldHidden($foreignKey, null, $required)->hideInPageBrowse();
+        if ($required) {
+            $this->addFieldHidden($foreignKey, null, $required)
+                ->hideInPageBrowse()
+                ->setValidation([
+                    'rule' => 'required',
+                    'messages' => [
+                        'required' => 'Es obligatorio cargar el campo.'
+                    ]
+                ]);
+        } else {
+            $this->addFieldHidden($foreignKey, null, $required)->hideInPageBrowse();
+        }
         return $this->addField(new HasOne($this->getBread()->getModelTableName(), $model, $foreignKey, $name, $width, $required, $label));
     }
 
     protected function addRelationHasMany(string $model, string $foreignKey, string $name, int $width = null, bool $required = true, string $label = 'nombre'): HasMany
     {
-        $this->addFieldHidden($foreignKey, null, $required)->hideInPageBrowse();
+        if ($required) {
+            $this->addFieldHidden($foreignKey, null, $required)
+                ->hideInPageBrowse()
+                ->setValidation([
+                    'rule' => 'required',
+                    'messages' => [
+                        'required' => 'Es obligatorio cargar el campo.'
+                    ]
+                ]);
+        } else {
+            $this->addFieldHidden($foreignKey, null, $required)->hideInPageBrowse();
+        }
         return $this->addField(new HasMany($this->getBread()->getModelTableName(), $model, $foreignKey, $name, $width, $required, $label));
     }
 
     protected function addRelationBelongsTo(string $model, string $foreignKey, string $name, int $width = null, bool $required = true, string $label = 'nombre'): BelongsTo
     {
-        $this->addFieldHidden($foreignKey, null, $required)->hideInPageBrowse();
-        return  $this->addField(new BelongsTo($this->getBread()->getModelTableName(), $model, $foreignKey, $name, $width, $required, $label));
+        if ($required) {
+            $this->addFieldHidden($foreignKey, null, $required)
+                ->hideInPageBrowse()
+                ->setValidation([
+                    'rule' => 'required',
+                    'messages' => [
+                        'required' => 'Es obligatorio cargar el campo.'
+                    ]
+                ]);
+        } else {
+            $this->addFieldHidden($foreignKey, null, $required)->hideInPageBrowse();
+        }
+        return $this->addField(new BelongsTo($this->getBread()->getModelTableName(), $model, $foreignKey, $name, $width, $required, $label));
     }
 
     protected function addRelationBelongsToMany(string $model, string $pivotTable, string $name, int $width = null, bool $taggable = false, string $label = 'nombre'): BelongsToMany
     {
         //$this->addFieldHidden($foreignKey, null, false)->hideInPageBrowse();
-        return  $this->addField(new BelongsToMany($this->getBread()->getModelTableName(), $model, $pivotTable, $name, $width, $taggable, $label));
+        return $this->addField(new BelongsToMany($this->getBread()->getModelTableName(), $model, $pivotTable, $name, $width, $taggable, $label));
     }
 }
