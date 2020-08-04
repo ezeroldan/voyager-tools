@@ -19,9 +19,7 @@ trait Relationships
                 ->hideInPageBrowse()
                 ->setValidation([
                     'rule' => 'required',
-                    'messages' => [
-                        'required' => 'Es obligatorio cargar el campo.'
-                    ]
+                    'messages' => ['required' => "Es obligatorio cargar el campo {$name}."]
                 ]);
         } else {
             $this->addFieldHidden($foreignKey, null, $required)->hideInPageBrowse();
@@ -36,9 +34,7 @@ trait Relationships
                 ->hideInPageBrowse()
                 ->setValidation([
                     'rule' => 'required',
-                    'messages' => [
-                        'required' => 'Es obligatorio cargar el campo.'
-                    ]
+                    'messages' => ['required' => "Es obligatorio cargar el campo {$name}."]
                 ]);
         } else {
             $this->addFieldHidden($foreignKey, null, $required)->hideInPageBrowse();
@@ -53,9 +49,7 @@ trait Relationships
                 ->hideInPageBrowse()
                 ->setValidation([
                     'rule' => 'required',
-                    'messages' => [
-                        'required' => 'Es obligatorio cargar el campo.'
-                    ]
+                    'messages' => ['required' => "Es obligatorio cargar el campo {$name}."]
                 ]);
         } else {
             $this->addFieldHidden($foreignKey, null, $required)->hideInPageBrowse();
