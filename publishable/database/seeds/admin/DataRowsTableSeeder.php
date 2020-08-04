@@ -65,7 +65,6 @@ class DataRowsTableSeeder extends Seeder
             ['created_at',   'timestamp', __('voyager::seeders.data_rows.created_at'),   false, false, false, false, false, false, 3],
             ['updated_at',   'timestamp', __('voyager::seeders.data_rows.updated_at'),   false, false, false, false, false, false, 4],
             ['display_name', 'text',      __('voyager::seeders.data_rows.display_name'), true,  true,  true,  true,  true,  true,  5],
-            ['role_id',      'text',      __('voyager::seeders.data_rows.role'),         true,  true,  true,  true,  true,  true,  6]
         ]);
     }
 }
