@@ -170,6 +170,16 @@ class MediaPicker extends Field
         return $this->addAllowed('image/bmp');
     }
 
+    public function addAllowedVideo(): self
+    {
+        return $this->addAllowed('video');
+    }
+
+    public function addAlloweAaudio(): self
+    {
+        return $this->addAllowed('audio');
+    }
+
     /**
      * The start path relative to the filesystem
      * Can contain the following placeholders:
