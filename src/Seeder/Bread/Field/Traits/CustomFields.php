@@ -43,7 +43,7 @@ trait CustomFields
     {
         return $this->addFieldText('slug', 'Identificador de URL (Slug)', true, $width, $origin, $forceUpdate)
             ->setValidation([
-                'rule' => 'required|unique:' . $this->getBread()->getTable(),
+                'rule' => 'required|unique:' . $this->getBread()->getModelTableName(),
                 'messages' => [
                     'required' => 'Es obligatorio cargar este campo',
                     'unique'   => 'Ya existe otro registro con el mismo nombre'
