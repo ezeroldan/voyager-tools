@@ -39,15 +39,24 @@ trait CustomFields
         return $this->addFieldText('nombre', 'Nombre', $required, $width);
     }
 
-    protected function addFieldSlug(int $width = null, $origin = 'nombre', bool $forceUpdate = true): Text
+    protected function addFieldSlug(int $width = null, $origin = 'nombre', bool $forceUpdate = true, bool $required = true): Text
     {
-        return $this->addFieldText('slug', 'Identificador de URL (Slug)', true, $width, $origin, $forceUpdate)
+        if ($required) {
+            return $this->addFieldText('slug', 'Identificador de URL (Slug)', $required, $width, $origin, $forceUpdate)
+                ->setValidation([
+                    'rule' => 'required|unique:' . $this->getBread()->getModelTableName(),
+                    'messages' => [
+                        'required' => 'Es obligatorio cargar este campo',
+                        'unique'   => 'Ya existe otro registro con el mismo nombre'
+                    ]
+                ])
+                ->hideInPageBrowse();
+        }
+
+        return $this->addFieldText('slug', 'Identificador de URL (Slug)', $required, $width, $origin, $forceUpdate)
             ->setValidation([
-                'rule' => 'required|unique:' . $this->getBread()->getModelTableName(),
-                'messages' => [
-                    'required' => 'Es obligatorio cargar este campo',
-                    'unique'   => 'Ya existe otro registro con el mismo nombre'
-                ]
+                'rule' => 'unique:' . $this->getBread()->getModelTableName(),
+                'messages' => ['unique'   => 'Ya existe otro registro con el mismo nombre']
             ])
             ->hideInPageBrowse();
     }
