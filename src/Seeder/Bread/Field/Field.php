@@ -142,6 +142,14 @@ class Field extends DataRow
 
     /**
      * Setear validacion
+     * 
+     * [
+     *    'rule' => 'required|max:12',
+     *    'messages' => [
+     *      'required' => 'This :attribute field is a must.',
+     *      'max' => 'This :attribute field maximum :max.'
+     *     ]
+     * ]
      *
      * @param array $param
      * @return self

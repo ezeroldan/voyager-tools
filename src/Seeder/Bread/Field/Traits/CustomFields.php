@@ -42,6 +42,13 @@ trait CustomFields
     protected function addFieldSlug(int $width = null, $origin = 'nombre', bool $forceUpdate = true): Text
     {
         return $this->addFieldText('slug', 'Identificador de URL (Slug)', true, $width, $origin, $forceUpdate)
+            ->setValidation([
+                'rule' => 'required|unique:' . $this->getBread()->getTable(),
+                'messages' => [
+                    'required' => 'Es obligatorio cargar este campo',
+                    'unique'   => 'Ya existe otro registro con el mismo nombre'
+                ]
+            ])
             ->hideInPageBrowse();
     }
 
