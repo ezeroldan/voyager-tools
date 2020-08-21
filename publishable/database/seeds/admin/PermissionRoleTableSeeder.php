@@ -9,8 +9,9 @@ class PermissionRoleTableSeeder extends Seeder
 
     public function run(): void
     {
-        $admin = Role::where('name', 'admin')->first();
-        self::attachAllPermissions($admin);
+        /** Developer */
+        $DEV = Role::where('name', 'DEV')->first();
+        self::attachAllPermissions($DEV);
     }
 
     protected static function attachAllPermissions(Role &$role)

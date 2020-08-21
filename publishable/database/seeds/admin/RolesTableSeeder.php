@@ -12,8 +12,9 @@ class RolesTableSeeder extends Seeder
     {
         $this->setModelClass(Role::class);
         $this->insertManyByFields(['name', 'display_name'], [
-            ['admin',    __('voyager::seeders.roles.admin')],
-            ['user',     __('voyager::seeders.roles.user')]
+            ['DEV', 'Developer'],
+            ['ADM', 'Administrador General'],
+            ['USR', 'Usuario Regular']
         ]);
     }
 }

@@ -9,16 +9,17 @@ class UsersTableSeeder extends Seeder
 {
     public function run(): void
     {
-        if (User::count() == 0) {
-            $role = Role::where('name', 'admin')->firstOrFail();
 
-            User::create([
-                'name'           => 'Admin',
-                'email'          => 'admin@admin.com',
-                'password'       => bcrypt('password'),
-                'remember_token' => Str::random(60),
-                'role_id'        => $role->id,
-            ]);
-        }
+        /** Administrador General */
+        $DEV = Role::where('name', 'DEV')->firstOrFail();
+        User::create([
+            'role_id'           => $DEV->id,
+            'name'              => 'Admin',
+            'email'             => 'admin@admin.com',
+            'password'          => bcrypt('password'),
+            'locale'            => 'es',
+            'remember_token'    => Str::random(60),
+            'email_verified_at' => now()
+        ]);
     }
 }

@@ -16,15 +16,15 @@ class DataRowsTableSeeder extends Seeder
         /** Users */
         $this->setDataPartial('data_type_id', DataType::where('slug', 'users')->firstOrFail()->id);
         $this->insertManyByFields(['field', 'type', 'display_name', 'required', 'browse', 'read', 'edit', 'add', 'delete', 'details', 'order'], [
-            ['id',             'number',    __('voyager::seeders.data_rows.id'),             true,  false, false, false, false, false, null, 1],
-            ['name',           'text',      __('voyager::seeders.data_rows.name'),           true,  true,  true,  true,  true,  true,  null, 2],
-            ['email',          'text',      __('voyager::seeders.data_rows.email'),          true,  true,  true,  true,  true,  true,  null, 3],
-            ['password',       'password',  __('voyager::seeders.data_rows.password'),       true,  false, false, true,  true,  false, null, 4],
+            ['id',             'number',    __('voyager::seeders.data_rows.id'),              true, false, false, false, false, false, null, 1],
+            ['name',           'text',      __('voyager::seeders.data_rows.name'),            true,  true,  true,  true,  true,  true, null, 2],
+            ['email',          'text',      __('voyager::seeders.data_rows.email'),           true,  true,  true,  true,  true,  true, null, 3],
+            ['password',       'password',  __('voyager::seeders.data_rows.password'),        true, false, false,  true,  true, false, null, 4],
             ['remember_token', 'text',      __('voyager::seeders.data_rows.remember_token'), false, false, false, false, false, false, null, 5],
-            ['created_at',     'timestamp', __('voyager::seeders.data_rows.created_at'),     false, true,  true,  false, false, false, null, 6],
+            ['created_at',     'timestamp', __('voyager::seeders.data_rows.created_at'),     false, false,  true, false, false, false, null, 6],
             ['updated_at',     'timestamp', __('voyager::seeders.data_rows.updated_at'),     false, false, false, false, false, false, null, 7],
-            ['avatar',         'image',     __('voyager::seeders.data_rows.avatar'),         false, true,  true,  true,  true,  true,  null, 8],
-            ['role_id',        'text',      __('voyager::seeders.data_rows.role'),           true,  true,  true,  true,  true,  true,  null, 9],
+            ['avatar',         'image',     __('voyager::seeders.data_rows.avatar'),         false, false,  true,  true,  true,  true, null, 8],
+            ['role_id',        'text',      __('voyager::seeders.data_rows.role'),            true,  true,  true,  true,  true,  true, null, 9],
             ['user_belongsto_role_relationship', 'relationship', __('voyager::seeders.data_rows.role'), false, true, true, true, true, false, [
                 'model'       => 'TCG\\Voyager\\Models\\Role',
                 'table'       => 'roles',
@@ -46,7 +46,7 @@ class DataRowsTableSeeder extends Seeder
                 'pivot'       => '1',
                 'taggable'    => '0',
             ], 11],
-            ['settings', 'hidden', 'Settings', false, false, false, false, false, false, null, 12]
+            ['settings', 'hidden', 'Settings', false, false, false, false, false, false, null, 12],
         ]);
 
         /** Menus */
@@ -65,7 +65,7 @@ class DataRowsTableSeeder extends Seeder
             ['name',         'text',      __('voyager::seeders.data_rows.name'),         true,  true,  true,  true,  true,  true,  2],
             ['created_at',   'timestamp', __('voyager::seeders.data_rows.created_at'),   false, false, false, false, false, false, 3],
             ['updated_at',   'timestamp', __('voyager::seeders.data_rows.updated_at'),   false, false, false, false, false, false, 4],
-            ['display_name', 'text',      __('voyager::seeders.data_rows.display_name'), true,  true,  true,  true,  true,  true,  5],
+            ['display_name', 'text',      __('voyager::seeders.data_rows.display_name'), true,  true,  true,  true,  true,  true,  5]
         ]);
     }
 }
