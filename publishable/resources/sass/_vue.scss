@@ -1,8 +1,3 @@
-busquedas-sugeridas {
-    display: flex;
-    min-height: 150px;
-}
-
 b-nav-item-dropdown {
     display: inline-block;
 
@@ -31,63 +26,6 @@ owl-carousel {
         width: 30% !important;
         margin: 15px;
     }
-}
-
-buscador-horizontal {
-    height: 340px;
-    display: flex;
-}
-@media (min-width: 768px) {
-    buscador-horizontal {
-        height: 170px;
-    }
-}
-
-resultados-busqueda {
-    height: 100vh;
-    display: flex;
-}
-
-inmueble-galeria {
-    height: 350px;
-    display: flex;
-    justify-content: space-between;
-
-    &::before {
-        width: 98%;
-        content: "";
-        display: flex;
-        border: 1px solid #e6e9ed;
-        background: #fff;
-        border-radius: 0.25rem;
-    }
-}
-@media (min-width: 768px) {
-    inmueble-galeria {
-        height: 250px;
-
-        &::before,
-        &::after {
-            width: 49%;
-            content: "";
-            display: flex;
-            border: 1px solid #e6e9ed;
-            background: #fff;
-            border-radius: 0.25rem;
-        }
-    }
-}
-
-inmueble-videos {
-    height: 35px;
-    display: flex;
-    margin-bottom: 1rem;
-}
-
-inmueble-mapa {
-    height: 500px;
-    display: flex;
-    background-color: #aadaff;
 }
 
 b-form-group {

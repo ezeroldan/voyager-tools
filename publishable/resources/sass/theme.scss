@@ -216,14 +216,8 @@ $themeColor: $primary;
 /* Components & Templates */
 body > #app {
     /* Components */
-    @import "components/vue";
-    @import "components/bg-img";
-    @import "components/slideshow";
-    @import "components/collapse-bloque";
-
-    /* Templates */
-    @import "inmuebles";
-
+    @import "vue";
+    
     /* Owl Carousel */
     .owl-carousel {
         .owl-item {

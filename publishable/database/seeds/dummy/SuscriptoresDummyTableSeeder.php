@@ -10,7 +10,6 @@ class SuscriptoresDummyTableSeeder extends Seeder
 
     public function run()
     {
-        factory(Suscriptor::class, 10)->create();
-        factory(Suscriptor::class, 10)->state('todos')->create();
+        factory(Suscriptor::class, 30)->create();
     }
 }
