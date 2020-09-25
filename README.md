@@ -14,9 +14,22 @@ rm -r vendor
 
 # Configurar DB
 nano .env
+
+APP_THEME="default"
+
+DB_DATABASE=test
+DB_USERNAME=root
+DB_PASSWORD=root
+
+GOOGLE_MAPS_KEY=""
+GOOGLE_MAPS_DEFAULT_ZOOM=10
+GOOGLE_MAPS_DEFAULT_CENTER_LAT="-34.6037389"
+GOOGLE_MAPS_DEFAULT_CENTER_LNG="-58.3815704"
+MIX_GOOGLE_MAPS_KEY="${GOOGLE_MAPS_KEY}"
+
 ```
 
-### Extras
+### Dependencias
 ```bash
 composer require fzaninotto/faker
 composer require google/recaptcha
@@ -39,23 +52,7 @@ php artisan voyager-tools:install
 npm i && npm run dev
 ```
 
-## Local Development
-
-```json
-"repositories": [
-    {
-        "type": "path",
-        "url": "../voyager-tools",
-        "options": {
-            "symlink": true
-        }
-    }
-]
+## Ejecutar seeders
+```bash
+php artisan app:seed --dummy
 ```
-
-```json
-"require": {
-    "ezeroldan/voyager-tools": "*"
-}
-```
-

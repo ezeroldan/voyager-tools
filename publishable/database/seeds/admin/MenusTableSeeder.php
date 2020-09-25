@@ -23,11 +23,14 @@ class MenusTableSeeder extends Seeder
 
         $this->insertManyByFields(['title', 'route', 'icon_class', 'order'], [
             [__('voyager::seeders.menu_items.dashboard'), 'voyager.dashboard',      'mdi mdi-view-dashboard',       1],
-            [__('voyager::seeders.menu_items.media'),     'voyager.media.index',    'mdi mdi-folder-image',         2],
-            [__('voyager::seeders.menu_items.users'),     'voyager.users.index',    'mdi mdi-account-multiple',     3],
-            [__('voyager::seeders.menu_items.roles'),     'voyager.roles.index',    'mdi mdi-card-account-details', 4],
-            [__('voyager::seeders.menu_items.tools'),     null,                     'mdi mdi-hammer',               5],
-            [__('voyager::seeders.menu_items.settings'),  'voyager.settings.index', 'mdi mdi-cog',                  6],
+            
+            ['Web',         null, 'mdi mdi-laptop', 2],
+            
+            [__('voyager::seeders.menu_items.media'),     'voyager.media.index',    'mdi mdi-folder-image',         3],
+            [__('voyager::seeders.menu_items.users'),     'voyager.users.index',    'mdi mdi-account-multiple',     4],
+            [__('voyager::seeders.menu_items.roles'),     'voyager.roles.index',    'mdi mdi-card-account-details', 5],
+            [__('voyager::seeders.menu_items.tools'),     null,                     'mdi mdi-hammer',               6],
+            [__('voyager::seeders.menu_items.settings'),  'voyager.settings.index', 'mdi mdi-cog',                  7],
         ]);
 
         $this->setDataPartial('parent_id', MenuItem::where('title', __('voyager::seeders.menu_items.tools'))->firstOrFail()->id);
