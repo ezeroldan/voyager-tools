@@ -8,7 +8,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->seddersAdmin();
         $this->seddersApp();
-        $this->seddersDummy();
 
         /** Permisos a Todos los Modulos */
         $this->call(PermissionRoleTableSeeder::class);
@@ -35,10 +34,19 @@ class DatabaseSeeder extends Seeder
 
     protected function seddersApp(): void
     {
-        $this->call(NavbarSeeder::class);
-    }
 
-    protected function seddersDummy(): void
-    {
+        $this->call(NavbarSeeder::class);
+
+        $this->call(NovedadesCategoriasTableSeeder::class);
+        $this->call(NovedadesTableSeeder::class);
+
+        $this->call(SlideshowsCategoriasTableSeeder::class);
+        $this->call(SlideshowsTableSeeder::class);
+
+        $this->call(PaginasTableSeeder::class);
+        $this->call(SucursalesTableSeeder::class);
+        $this->call(SuscriptoresTableSeeder::class);
+
+        $this->call(ConsultasTableSeeder::class);
     }
 }

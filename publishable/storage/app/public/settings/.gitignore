@@ -1,0 +1,7 @@
+*
+!.gitignore
+
+# Imagenes de los Settings
+!admin-loader.png
+!admin-bg_image.jpg
+!admin-icon_image.png

@@ -1,0 +1,5 @@
+*
+!.gitignore
+
+# Imagenes de Usuarios
+!default.png

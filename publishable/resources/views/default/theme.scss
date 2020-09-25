@@ -1,0 +1,69 @@
+/* Default Theme */
+
+/* Colors: */
+/* http://materialuicolors.co */
+$red: #d32f2f;
+$blue: #1976d2;
+$pink: #c2185b;
+$cyan: #0097a7;
+$teal: #00796b;
+$green: #388e3c;
+$indigo: #303f9f;
+$purple: #7b1fa2;
+$orange: #f57c00;
+$yellow: #fbc02d;
+
+$primary: $blue;
+
+/* Font: Raleway */
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900");
+$font-family-sans-serif: "Raleway", sans-serif;
+
+/* Font: Montserrat */
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+//$font-family-sans-serif: "Montserrat", sans-serif !default;
+
+/* Estructura Principal */
+@import "../../sass/theme.scss";
+
+/* Theme */
+body > #app {
+    header {
+        background-color: #fff;
+    }
+
+    nav.navbar {
+        z-index: 1030;
+        font-weight: 500;
+        background-color: #fff;
+
+        .navbar-nav {
+            .dropdown-menu {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+    }
+
+    footer {
+        address {
+            color: $gray-600;
+            margin: 0;
+            font-size: 0.8rem;
+            font-weight: 400;
+
+            a {
+                color: $gray-600;
+                &:hover,
+                &:focus {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.modal .modal-header {
+    color: #fff;
+    background: $primary;
+}

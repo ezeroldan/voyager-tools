@@ -1,0 +1,11 @@
+*
+!.gitignore
+
+# Imagenes de los Settings
+!settings
+
+# Imagenes de Usuarios
+!users
+
+# Imagenes de los Widgets
+!widgets

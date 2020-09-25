@@ -1,0 +1,6 @@
+*
+!.gitignore
+
+# Imagenes de los Widgets
+!consultas.jpg
+!suscriptores.jpg

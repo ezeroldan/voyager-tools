@@ -48,11 +48,9 @@ return [
         ],
 
         'widgets' => [
+            'App\\Widgets\\ConsultasDimmer',
+            'App\\Widgets\\SuscriptoresDimmer',
             'TCG\\Voyager\\Widgets\\UserDimmer',
-            //'TCG\\Voyager\\Widgets\\PostDimmer',
-            //'TCG\\Voyager\\Widgets\\PageDimmer',
-
-            //'App\\Widgets\\ConsultasDimmer',
         ],
     ],
 
@@ -65,7 +63,7 @@ return [
 
     'primary_color' => env('ADMIN_PRIMARY_COLOR', '#242a33'),
 
-    'show_dev_tips' => true,
+    'show_dev_tips' => false,
 
     'additional_css' => ['admin.css'],
 
@@ -73,7 +71,7 @@ return [
 
     'googlemaps' => [
         'key'    => env('GOOGLE_MAPS_KEY', ''),
-        'zoom'   => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
+        'zoom'   => env('GOOGLE_MAPS_DEFAULT_ZOOM', 10),
         'center' => [
             'lat' => env('GOOGLE_MAPS_DEFAULT_CENTER_LAT', '-34.6037389'),
             'lng' => env('GOOGLE_MAPS_DEFAULT_CENTER_LNG', '-58.3815704'),

@@ -11,7 +11,7 @@ class InstallCommand extends Command
 {
     protected $composer;
 
-    protected $signature   = 'voyager-tools:install {--force : Force the operation to run}';
+    protected $signature   = 'voyager-tools:install';
     protected $description = 'Instala mis ajustes al Voyager package';
 
     public function __construct(Composer $composer)
@@ -22,27 +22,23 @@ class InstallCommand extends Command
 
     public function handle()
     {
-
-        $this->call('vendor:publish', ['--provider' => VoyagerToolsServiceProvider::class, '--tag' => ['config'], '--force' => $this->option('force')]);
-
-        $this->call('migrate:fresh');
+        $this->call('vendor:publish', ['--provider' => VoyagerToolsServiceProvider::class, '--tag' => ['config'], '--force' => true]);
         $this->call('voyager:install');
 
-        if ($this->option('force')) {
-            File::cleanDirectory(resource_path('/js'));
-            File::cleanDirectory(resource_path('/sass'));
-            File::cleanDirectory(resource_path('/views'));
-            File::cleanDirectory(database_path('/seeds'));
-        }
+        File::cleanDirectory(resource_path('/js'));
+        File::cleanDirectory(resource_path('/sass'));
+        File::cleanDirectory(resource_path('/views'));
+        File::cleanDirectory(database_path('/seeds'));
+        File::cleanDirectory(database_path('/migrations'));
 
-        $this->info('vendor:publish');
-        $tags = ['database', 'config', 'assets', 'lang', 'routes', 'public', 'stubs', 'views'];
-        $this->call('vendor:publish', ['--provider' => VoyagerToolsServiceProvider::class, '--tag' => $tags, '--force' => $this->option('force')]);
+        $tags = ['app', 'database', 'public', 'resources', 'routes', 'storage', 'stubs', 'root'];
+        $this->info('Publicar vendor');
+        $this->call('vendor:publish', ['--provider' => VoyagerToolsServiceProvider::class, '--tag' => $tags, '--force' => true]);
 
         $this->info('composer dump-autoload');
         $this->composer->setWorkingPath(base_path())->dumpAutoloads();
 
-        $this->info('migrate:fresh');
+        $this->info('Migrar la Base de Datos');
         $this->call('migrate:fresh', ['--seed' => true]);
     }
 }

@@ -1,0 +1,10 @@
+*
+!.gitignore
+
+# Imagenes
+!404.jpg
+!logo.png
+!favicon.ico
+
+# pwa
+!pwa

@@ -16,27 +16,12 @@
         }
     ],
     "require": {
-        "artesaos/seotools": "^0.17.2",
-        "illuminate/support": "~6.0|~7.0",
         "tcg/voyager": "^1.4"
-    },
-    "require-dev": {
-        "phpunit/phpunit": ">=8.0",
-        "orchestra/testbench": ">=4.0"
     },
     "autoload": {
         "psr-4": {
             "EzeRoldan\\VoyagerTools\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "EzeRoldan\\VoyagerTools\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     },
     "config": {
         "sort-packages": true

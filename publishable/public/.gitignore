@@ -1,0 +1,10 @@
+*
+!.gitignore
+
+!.htaccess
+!index.php
+!robots.txt
+
+# Themes
+!default
+

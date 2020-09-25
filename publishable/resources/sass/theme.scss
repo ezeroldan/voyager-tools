@@ -1,0 +1,412 @@
+/* Font */
+$font-size-sm: 0.8rem !default;
+$font-size-lg: 1.25rem !default;
+$font-size-base: 0.9rem !default;
+$font-family-sans-serif: "Open Sans", sans-serif !default;
+
+/* Colors: */
+/* http://materialuicolors.co */
+$primary: #4a89dc !default;
+
+$gray-100: #fafafa !default;
+$gray-200: #eeeeee !default;
+$gray-300: #e0e0e0 !default;
+$gray-400: #bdbdbd !default;
+$gray-500: #9e9e9e !default;
+$gray-600: #757575 !default;
+$gray-700: #616161 !default;
+$gray-800: #424242 !default;
+$gray-900: #212121 !default;
+
+$dark: #222 !default;
+$secondary: $gray-300 !default;
+
+/* Display headings */
+$display1-size: 4.5rem !default;
+$display1-weight: 900 !default;
+
+$display2-size: 3.5rem !default;
+$display2-weight: 800 !default;
+
+$display3-size: 2rem !default;
+$display3-weight: 700 !default;
+
+$display4-size: 1.5rem !default;
+$display4-weight: 600 !default;
+
+/* Tabs */
+$nav-tabs-border-width: 0 !default;
+
+/* Navbar */
+$navbar-nav-link-padding-x: 1rem !default;
+$navbar-light-color: $gray-800 !default;
+$navbar-light-hover-color: $primary !default;
+$navbar-light-active-color: $navbar-light-color !default;
+
+/* Dropdown */
+$dropdown-spacer: 0.5rem !default;
+$dropdown-padding-y: 0.25rem !default;
+$dropdown-font-size: 0.8rem !default;
+$dropdown-border-color: $gray-300 !default;
+$dropdown-item-padding-x: 0.75rem !default;
+
+/* Cards */
+$card-cap-bg: $gray-300 !default;
+$card-spacer-y: 1rem !default;
+$card-spacer-x: 1rem !default;
+$card-border-width: 0px !default;
+
+/* List Group */
+$list-group-item-padding-y: 0.5rem !default;
+$list-group-item-padding-x: 0.75rem !default;
+
+/* Input Group */
+$input-group-addon-border-color: $gray-200 !default;
+
+/* Modal */
+$modal-lg: 860px;
+
+/* Slider */
+$themeColor: $primary;
+@import "~vue-slider-component/lib/theme/default.scss";
+
+/* Bootstrap */
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-vue/src/index.scss";
+
+/* Fancybox */
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+
+/* Multiselect */
+@import "~vue-multiselect/dist/vue-multiselect.min.css";
+.multiselect {
+    color: #35495e;
+    height: 35px;
+    min-height: 35px;
+
+    .multiselect__spinner {
+        width: 35px;
+        height: 33px;
+    }
+
+    .multiselect__spinner:after,
+    .multiselect__spinner:before {
+        border-top-color: $primary;
+    }
+
+    .multiselect--disabled {
+        background: transparent;
+    }
+
+    .multiselect__select {
+        width: 30px;
+        height: 33px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .multiselect__select:before {
+        top: 70%;
+    }
+
+    .multiselect__input,
+    .multiselect__single {
+        cursor: pointer;
+        font-size: 13px;
+    }
+
+    .multiselect__input:-ms-input-placeholder {
+        color: $gray-600;
+    }
+
+    .multiselect__input::placeholder {
+        color: $gray-600;
+    }
+    .multiselect__tags {
+        padding: 5px 30px 0 5px;
+        font-size: 13px;
+        min-height: 35px;
+        height: 35px;
+    }
+
+    .multiselect__tags-wrap {
+        display: block;
+    }
+
+    .multiselect__tag {
+        color: #fff;
+        background: $primary;
+
+        padding: 4px 20px 4px 10px;
+        font-size: 12px;
+        line-height: 14px;
+        margin-right: 5px;
+        margin-bottom: 4px;
+        border-radius: 3px;
+    }
+
+    .multiselect__tag-icon {
+        width: 18px;
+        margin-left: 0px;
+        line-height: 18px;
+        border-radius: 3px;
+    }
+
+    .multiselect__tag-icon:after {
+        color: #fff;
+    }
+
+    .multiselect__tag-icon:focus,
+    .multiselect__tag-icon:hover {
+        background: $primary;
+    }
+
+    .multiselect__tag-icon:focus:after,
+    .multiselect__tag-icon:hover:after {
+        color: #fff;
+    }
+
+    .multiselect__current {
+        min-height: 30px;
+        padding: 8px 30px 0 12px;
+    }
+    .multiselect__placeholder {
+        padding-top: 2px;
+        padding-left: 5px;
+        margin-bottom: 7px;
+    }
+
+    .multiselect__option {
+        padding: 8px 10px;
+        font-size: 13px;
+        min-height: 35px;
+    }
+
+    .multiselect__option--highlight {
+        background: $primary;
+        color: #fff;
+    }
+
+    .multiselect__option--highlight:after {
+        background: $primary;
+        color: #fff;
+    }
+
+    .multiselect__option--selected.multiselect__option--highlight {
+        background: $secondary;
+        color: #333;
+    }
+
+    .multiselect__option--selected.multiselect__option--highlight:after {
+        background: $secondary;
+        color: #333;
+    }
+
+    .multiselect__option--group-selected.multiselect__option--highlight {
+        background: $secondary;
+        color: #333;
+    }
+
+    .multiselect__option--group-selected.multiselect__option--highlight:after {
+        background: $secondary;
+        color: #333;
+    }
+}
+
+/* Components & Templates */
+body > #app {
+    /* Components */
+    @import "components/vue";
+    @import "components/bg-img";
+    @import "components/slideshow";
+    @import "components/collapse-bloque";
+
+    /* Templates */
+    @import "inmuebles";
+
+    /* Owl Carousel */
+    .owl-carousel {
+        .owl-item {
+            display: flex;
+            float: none;
+        }
+
+        .owl-stage {
+            display: flex;
+            align-items: stretch !important;
+        }
+
+        .owl-dots .owl-dot {
+            &.active span,
+            &:hover span {
+                background: $primary;
+            }
+        }
+    }
+    .position-relative .carousel-btn {
+        top: 50%;
+        position: absolute;
+        margin-top: -10px;
+
+        &.prev {
+            left: -35px;
+        }
+
+        &.next {
+            right: -35px;
+        }
+
+        .btn {
+            padding: 4px;
+            > .mdi {
+                width: 20px;
+                height: 30px;
+                display: block;
+                font-size: 45px;
+                line-height: 30px;
+
+                &::before {
+                    margin-left: -12px;
+                }
+            }
+        }
+    }
+}
+
+/* Theme: Body */
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    > #app {
+        min-height: 100vh;
+
+        .bg-black {
+            background-color: $black;
+        }
+
+        .bg-gray-100 {
+            background-color: $gray-100;
+        }
+        .bg-gray-200 {
+            background-color: $gray-200;
+        }
+
+        .bg-gray-300 {
+            background-color: $gray-300;
+        }
+
+        .bg-gray-400 {
+            background-color: $gray-400;
+        }
+
+        .bg-gray-500 {
+            background-color: $gray-500;
+        }
+
+        .bg-gray-600 {
+            background-color: $gray-600;
+        }
+
+        .bg-gray-700 {
+            background-color: $gray-700;
+        }
+
+        .bg-gray-800 {
+            background-color: $gray-800;
+        }
+
+        .bg-gray-900 {
+            background-color: $gray-900;
+        }
+
+        .row.row-10 {
+            margin-left: -5px;
+            margin-right: -5px;
+
+            > div {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+        .row.row-20 {
+            margin-left: -10px;
+            margin-right: -10px;
+
+            > .col {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+
+        main {
+            blockquote {
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
+                background: #fff;
+                border-left: 5px solid $primary;
+                border-radius: 3px;
+                margin-bottom: 1rem;
+            }
+
+            .form-group label {
+                font-weight: 600;
+            }
+
+            .bg-dark-transparent {
+                background-color: #222222b0;
+            }
+
+            /* Pagination */
+            nav > .pagination {
+                margin: 0;
+                justify-content: center;
+            }
+            .row.justify-content-around > .col {
+                &:first-child > nav > .pagination {
+                    justify-content: flex-start;
+                }
+                &:last-child > nav > .pagination {
+                    justify-content: flex-end;
+                }
+            }
+        }
+
+        .btn.btn-outline-primary {
+            background-color: #fff;
+
+            &.active {
+                background-color: $primary;
+            }
+
+            &:hover {
+                background-color: $primary;
+            }
+        }
+    }
+}
+
+/* Theme: Selection */
+*::selection {
+    background: $primary;
+    color: #ffffff;
+}
+html *::-moz-selection {
+    background: $primary;
+    color: #ffffff;
+}
+
+/* Theme: Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #bdc3c7;
+}
+::-webkit-scrollbar-thumb {
+    background: #656d78;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: $primary;
+}
