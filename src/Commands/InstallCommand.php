@@ -39,6 +39,6 @@ class InstallCommand extends Command
         $this->composer->setWorkingPath(base_path())->dumpAutoloads();
 
         $this->info('Migrar la Base de Datos');
-        $this->call('migrate:fresh', ['--seed' => true]);
+        $this->call('migrate:fresh', ['--seed'   => true, '--force'  => true, '--seeder' => 'DatabaseDummySeeder']);
     }
 }
