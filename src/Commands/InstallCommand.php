@@ -22,6 +22,8 @@ class InstallCommand extends Command
 
     public function handle()
     {
+        $this->composer->setWorkingPath(base_path())->dumpAutoloads();
+
         $this->call('vendor:publish', ['--provider' => VoyagerToolsServiceProvider::class, '--tag' => ['config'], '--force' => true]);
         $this->call('voyager:install');
 

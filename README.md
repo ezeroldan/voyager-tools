@@ -57,3 +57,24 @@ npm i && npm run dev
 ```bash
 php artisan app:seed --dummy
 ```
+
+
+## Local Development
+
+```json
+"repositories": [
+    {
+        "type": "path",
+        "url": "../voyager-tools",
+        "options": {
+            "symlink": true
+        }
+    }
+]
+```
+
+```json
+"require": {
+    "ezeroldan/voyager-tools": "*"
+}
+```
