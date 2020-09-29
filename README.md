@@ -49,6 +49,8 @@ composer require fzaninotto/faker google/recaptcha artesaos/seotools usmanhalali
 composer require tcg/voyager ezeroldan/voyager-tools
 
 php artisan voyager-tools:install
+composer dump-autoload
+php artisan app:seed --dummy
 
 npm i && npm run dev
 ```
@@ -58,19 +60,14 @@ npm i && npm run dev
 php artisan app:seed --dummy
 ```
 
-
 ## Local Development
 
 ```json
-"repositories": [
-    {
-        "type": "path",
-        "url": "../voyager-tools",
-        "options": {
-            "symlink": true
-        }
-    }
-]
+"repositories": [{
+    "type": "path",
+    "url": "../voyager-tools",
+    "options": {"symlink": true}
+}]
 ```
 
 ```json

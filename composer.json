@@ -16,6 +16,7 @@
         }
     ],
     "require": {
+        "illuminate/support": "~7.0",
         "tcg/voyager": "^1.4"
     },
     "autoload": {
