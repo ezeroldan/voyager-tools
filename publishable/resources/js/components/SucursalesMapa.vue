@@ -1,7 +1,7 @@
 <script lang="ts">
 // @ts-ignore
 import { gmapsMap, gmapsMarker } from "x5-gmaps";
-import { iMapa, iMarker } from "../../interfaces";
+import { iMapa, iMarker } from "../interfaces";
 import { Vue, Component, Prop } from "vue-property-decorator";
 
 @Component({ components: { gmapsMap, gmapsMarker } })
@@ -29,8 +29,7 @@ export default class SucursalesMapa extends Vue {
     streetViewControl: false,
   };
 
-  protected markerIcon =
-    "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi.png";
+  protected markerIcon = "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi.png";
 
   mounted() {
     let markers: Array<iMarker> = [];
