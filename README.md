@@ -6,7 +6,7 @@ Este es un paquete de Tools para facilitar el uso del panel admin [TCG Voyager](
 
 ### Generar Aplicacion
 ```bash
-composer create-project laravel/laravel app "7.0"
+composer create-project laravel/laravel app "7.30"
 ```
 
 ### Configurar
